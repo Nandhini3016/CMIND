@@ -1,0 +1,66 @@
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <data>
+        <import type="android.view.View" />
+        <variable
+            name="viewModel"
+            type="com.example.cmind.MainViewModel" />
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:padding="16dp">
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/enter_string"
+            android:text="@={viewModel.inputText}" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@{viewModel.errorText}"
+            android:textColor="#FF0000"
+            android:visibility="@{viewModel.errorText.isEmpty() ? View.GONE : View.VISIBLE}" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text='@{"Output: " + viewModel.outputText}'
+            android:textSize="18sp"
+            android:paddingTop="10dp" />
+
+        <Button
+            android:id="@+id/lengthButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/length" />
+
+        <Button
+            android:id="@+id/reverseButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/reverse" />
+
+        <Button
+            android:id="@+id/appendButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/append" />
+
+        <Button
+            android:id="@+id/numericButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/numeric" />
+
+        <Button
+            android:id="@+id/clearButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/clear" />
+    </LinearLayout>
+</layout>
